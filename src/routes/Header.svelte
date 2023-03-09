@@ -1,45 +1,38 @@
-<script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
-</script>
-
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="https://chainmonsters.com">
+			<img
+				class="icon"
+				src="https://chainmonsters.com/_next/image?url=%2Fimages%2Fchipleaf_head.png&w=64&q=75"
+				alt="SvelteKit"
+			/>
 		</a>
 	</div>
 
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
+		<a href="https://github.com/bside-luke">
+			<svg class="icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+				<path
+					fill="#FFFFFF"
+					fill-rule="evenodd"
+					clip-rule="evenodd"
+					d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.303 6.533 5.5 7.59.4.074.547-.174.547-.387 0-.192-.007-.7-.01-1.374-2.238.485-2.707-1.084-2.707-1.084-.365-.927-.89-1.174-.89-1.174-.727-.498.055-.487.055-.487.805.057 1.232.83 1.232.83.718 1.234 1.884.877 2.34.668.072-.525.281-.877.51-1.078-1.785-.202-3.655-.894-3.655-3.973 0-.878.312-1.596.824-2.157-.083-.203-.36-1.018.079-2.121 0 0 .672-.215 2.2.82.638-.178 1.318-.267 2-.271.682.004 1.362.093 2 .27 1.527-1.035 2.198-.82 2.198-.82.44 1.103.163 1.918.08 2.12.514.561.825 1.28.825 2.157 0 3.086-1.874 3.767-3.665 3.965.288.248.545.736.545 1.483 0 1.071-.01 1.937-.01 2.198 0 .215.144.465.55.386A8.002 8.002 0 0 0 16 8c0-4.418-3.582-8-8-8z"
+				/>
+			</svg>
 		</a>
 	</div>
 </header>
 
 <style>
+	.icon:hover {
+		transform: scale(1.2);
+		transition: transform 0.2s;
+		transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+	}
+
 	header {
+		background: linear-gradient(to bottom, #08333333 0%, #07333333 100%);
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -61,66 +54,6 @@
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
 	}
 
 	a:hover {

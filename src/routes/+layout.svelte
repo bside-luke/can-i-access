@@ -11,7 +11,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>Contact <a href="https://kit.svelte.dev">Chainmonsters Support</a> if you need further assistance!</p>
 	</footer>
 </div>
 
